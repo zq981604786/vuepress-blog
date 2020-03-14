@@ -1,6 +1,7 @@
 const path = require('path')
 module.exports = {
-    base: process.env.NODE_ENV === 'dev' ? '' : '/vuepress-blog/docs',
+    // base: process.env.NODE_ENV === 'dev' ? '' : '/vuepress-blog/',
+    base:'/vuepress-blog/',
     title:'笔记本',
     description:'冰冻三尺非一日之寒，滴水石穿非一日之功。',
     // 导航栏
