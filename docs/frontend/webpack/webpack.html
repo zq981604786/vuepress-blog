@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>安装webpack | 笔记本</title>
+    <meta name="description" content="冰冻三尺非一日之寒，滴水石穿非一日之功。">
+    <meta name="generator" content="VuePress 1.3.1">
+    
+    
+    <link rel="preload" href="/vueprss-blog/assets/css/0.styles.6f7686a7.css" as="style"><link rel="preload" href="/vueprss-blog/assets/js/app.8935fa97.js" as="script"><link rel="preload" href="/vueprss-blog/assets/js/2.65e50b3e.js" as="script"><link rel="preload" href="/vueprss-blog/assets/js/10.125fb6e1.js" as="script"><link rel="prefetch" href="/vueprss-blog/assets/js/11.a6447434.js"><link rel="prefetch" href="/vueprss-blog/assets/js/12.c7bdcf91.js"><link rel="prefetch" href="/vueprss-blog/assets/js/13.6c252bc6.js"><link rel="prefetch" href="/vueprss-blog/assets/js/14.a0476198.js"><link rel="prefetch" href="/vueprss-blog/assets/js/15.c5694ec2.js"><link rel="prefetch" href="/vueprss-blog/assets/js/16.d5f63d6d.js"><link rel="prefetch" href="/vueprss-blog/assets/js/17.819eed96.js"><link rel="prefetch" href="/vueprss-blog/assets/js/3.6714e1e4.js"><link rel="prefetch" href="/vueprss-blog/assets/js/4.0aeee46c.js"><link rel="prefetch" href="/vueprss-blog/assets/js/5.911decd9.js"><link rel="prefetch" href="/vueprss-blog/assets/js/6.e53279fa.js"><link rel="prefetch" href="/vueprss-blog/assets/js/7.2c1b85a8.js"><link rel="prefetch" href="/vueprss-blog/assets/js/8.bc9a8f05.js"><link rel="prefetch" href="/vueprss-blog/assets/js/9.07adbba7.js">
+    <link rel="stylesheet" href="/vueprss-blog/assets/css/0.styles.6f7686a7.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/vueprss-blog/" class="home-link router-link-active"><!----> <span class="site-name">笔记本</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/vueprss-blog/" class="nav-link">
+  主页
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="前端" class="dropdown-title"><span class="title">前端</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/vueprss-blog/frontend/vue/vue.html" class="nav-link">
+  Vue
+</a></li><li class="dropdown-item"><!----> <a href="/vueprss-blog/frontend/react/react.html" class="nav-link">
+  React
+</a></li><li class="dropdown-item"><!----> <a href="/vueprss-blog/frontend/webpack/webpack.html" class="nav-link router-link-exact-active router-link-active">
+  Webpack
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="后台" class="dropdown-title"><span class="title">后台</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/vueprss-blog/backend/node/node.html" class="nav-link">
+  Node
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="其他" class="dropdown-title"><span class="title">其他</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/vueprss-blog/others/docker/docker.html" class="nav-link">
+  Docker
+</a></li><li class="dropdown-item"><!----> <a href="/vueprss-blog/others/nginx/nginx.html" class="nav-link">
+  Nginx
+</a></li><li class="dropdown-item"><!----> <a href="/vueprss-blog/others/seo/seo.html" class="nav-link">
+  SEO
+</a></li></ul></div></div><div class="nav-item"><a href="/vueprss-blog/myself/about.html" class="nav-link">
+  关于作者
+</a></div><div class="nav-item"><a href="https://github.com/zq981604786/vueprss-blog" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  GitHub
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></div> <!----></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="/vueprss-blog/" class="nav-link">
+  主页
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="前端" class="dropdown-title"><span class="title">前端</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/vueprss-blog/frontend/vue/vue.html" class="nav-link">
+  Vue
+</a></li><li class="dropdown-item"><!----> <a href="/vueprss-blog/frontend/react/react.html" class="nav-link">
+  React
+</a></li><li class="dropdown-item"><!----> <a href="/vueprss-blog/frontend/webpack/webpack.html" class="nav-link router-link-exact-active router-link-active">
+  Webpack
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="后台" class="dropdown-title"><span class="title">后台</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/vueprss-blog/backend/node/node.html" class="nav-link">
+  Node
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="其他" class="dropdown-title"><span class="title">其他</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/vueprss-blog/others/docker/docker.html" class="nav-link">
+  Docker
+</a></li><li class="dropdown-item"><!----> <a href="/vueprss-blog/others/nginx/nginx.html" class="nav-link">
+  Nginx
+</a></li><li class="dropdown-item"><!----> <a href="/vueprss-blog/others/seo/seo.html" class="nav-link">
+  SEO
+</a></li></ul></div></div><div class="nav-item"><a href="/vueprss-blog/myself/about.html" class="nav-link">
+  关于作者
+</a></div><div class="nav-item"><a href="https://github.com/zq981604786/vueprss-blog" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  GitHub
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></div> <!----></nav>  <ul class="sidebar-links"><li><a href="/vueprss-blog/frontend/webpack/webpack.html" class="active sidebar-link">安装webpack</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/vueprss-blog/frontend/webpack/webpack.html#webpack实践-loader" class="sidebar-link">webpack实践   loader</a></li><li class="sidebar-sub-header"><a href="/vueprss-blog/frontend/webpack/webpack.html#plugins-让webpack运行到某个时刻的时候，做一些事情，类似于生命周期" class="sidebar-link">plugins  让webpack运行到某个时刻的时候，做一些事情，类似于生命周期</a></li><li class="sidebar-sub-header"><a href="/vueprss-blog/frontend/webpack/webpack.html#output-entry" class="sidebar-link">output entry</a></li><li class="sidebar-sub-header"><a href="/vueprss-blog/frontend/webpack/webpack.html#sourcemap-是一个映射关系，出说那块代码报错-看源代码哪错了，而不是打包之后的代码" class="sidebar-link">sourceMap  是一个映射关系，出说那块代码报错  看源代码哪错了，而不是打包之后的代码</a></li><li class="sidebar-sub-header"><a href="/vueprss-blog/frontend/webpack/webpack.html#webpackdevserve" class="sidebar-link">webpackDevServe</a></li><li class="sidebar-sub-header"><a href="/vueprss-blog/frontend/webpack/webpack.html#vue中配置webpack" class="sidebar-link">vue中配置webpack</a></li></ul></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h1 id="安装webpack"><a href="#安装webpack" class="header-anchor">#</a> 安装webpack</h1> <div class="language- extra-class"><pre><code>npm init -y
+npm i webpack-cli  webpack --save-dev
+
+
+npx webpack index.js
+
+webpack是一个模块打包工具
+ 
+// CommonJS   let header = require('./header.js')   module.exports = header
+// Es module  import headr from './header.js'       export default header
+
+package.json 中的private:true,不会发布到node中
+
+npm i webpack webpack-cli -g
+webpack -v 查看版本号   最好不要全局安装，会导致其他版本的webpack无法运行
+
+npm info webpack 查看版本号
+
+npx运行当前目录下的文件
+npx webpack --config webpackconfig.js  改变webpack默认打包配置文件
+webpack-cli 的作用是在命令行中使用webpack的命令
+</code></pre></div><h1 id="webpack配置"><a href="#webpack配置" class="header-anchor">#</a> webpack配置</h1> <p>module.exports = {</p> <div class="language- extra-class"><pre><code>## mode:'production', // development
+## entry:'' //入口简写
+</code></pre></div> <div class="language- extra-class"><pre><code>## output:{
+	## filename:'',
+	## path:path.reslove(__driname,'')
+}，
+module:{
+	rules:[
+		{
+			test:/\.jpg$/,
+			use:{
+				loader:'file-loader'
+			}
+		}
+	]
+}
+</code></pre></div><p>}</p> <h1 id="打包过程"><a href="#打包过程" class="header-anchor">#</a> 打包过程</h1> <div class="language- extra-class"><pre><code>hash 本次打包唯一一个哈希值
+version webpack 的版本
+time 时间
+built
+bundle 打包出的文件
+chunk 和 chunks放置的是id和名字
+Entrypoint 整个打包文件入口文件
+</code></pre></div><h2 id="webpack实践-loader"><a href="#webpack实践-loader" class="header-anchor">#</a> webpack实践   loader</h2> <div class="language- extra-class"><pre><code>loader让webpack识别文件，在module下面的rules中配置  //file-loader,url-loader，直接将图标加载在js中，将图片转为base64。仅适用于图标较小的，否则会影响js加载
+module:{
+	rules:[
+		{
+			test:/\.jpg$/,
+			use:{
+				loader:'url-loader'
+			},
+			options:{
+				name:'[name].[ext]' // 采用之前的名字和后缀 placeholder占位符
+				outputPath:'images/' // 输出目录
+				limit:2048 // 如果图标小于2kb，则直接放在js中
+			}
+		}
+	]
+}
+
+style-loader  将css解析挂在在页面 
+css-loader  分析多个css直接的关系
+sass-loader
+postcss-loader 自动添加厂商的前缀，以便兼容各个浏览器
+	postcss.config.js
+		module.exports = {
+			plugins:[
+				require('autoprefixer')
+			]
+		}
+loader有执行顺序，从上到下，从右到左
+</code></pre></div><p>​</p> <div class="language- extra-class"><pre><code>use:['style-loader',{
+                    loader:'css-loader',
+                    options:{
+                        importLoaders:2  //使用这个确保在js中引入的css中的其他css也使用sass或postcss-loader
+						modules:true  // 是的css模块化，css只在当前引入页面生效  import style from './index'    img.classList.add(style.avter)
+                    }
+                }]   
+
+打包字体
+</code></pre></div><h2 id="plugins-让webpack运行到某个时刻的时候，做一些事情，类似于生命周期"><a href="#plugins-让webpack运行到某个时刻的时候，做一些事情，类似于生命周期" class="header-anchor">#</a> plugins  让webpack运行到某个时刻的时候，做一些事情，类似于生命周期</h2> <div class="language- extra-class"><pre><code>npm i html-webpack-plugin  // 热更新,会在打包结束后，自动生成一个html文件，并把打包生成的js自动引入html文件中    打包之后运行的
+let HtmlWebpackPlugin = require('html-webpack-plugin')
+plugins:[new HtmlWebpackPlugin({
+	template:'' //默认生成模板地址地址
+	)]
+	
+npm i clean-webpack-plugin -d 清除生成的打包文件
+let CleanWebpackPlugin = reuqire('clean-webpack-plugin')
+plugins:[new CleanWebpackPlguin(['dist'])] // 帮助我们删除dist目录下的所有东西   打包之前运行的
+</code></pre></div><h2 id="output-entry"><a href="#output-entry" class="header-anchor">#</a> output entry</h2> <div class="language- extra-class"><pre><code>entry:{
+	main:'./index.js',
+	sub:'./index.js'
+}
+output:{
+	filename:'[name].js',
+	publicPath:'http://cdn.com.cd' //打包文件加一个路径
+}
+</code></pre></div><h2 id="sourcemap-是一个映射关系，出说那块代码报错-看源代码哪错了，而不是打包之后的代码"><a href="#sourcemap-是一个映射关系，出说那块代码报错-看源代码哪错了，而不是打包之后的代码" class="header-anchor">#</a> sourceMap  是一个映射关系，出说那块代码报错  看源代码哪错了，而不是打包之后的代码</h2> <div class="language- extra-class"><pre><code>在开发者模式下默认是配置好的 mode:'development'
+devtool:'none'
+devtool:'source-map'
+devtool:'inline-source-map'  //隐藏.map.js文件，直接打包在js文件中  好烦性能  具体的位置，具体到列
+devtool:'cheap-inline-source-map'  //只需要告诉具体的行，不需要具体的列
+devtool:'cheap-module-source-map' //模块中的错误
+devtool:'eval' //直接执行，针对比较复杂的情况下，这个有可能不全面
+
+推荐使用 development
+devtool:'cheap-module-eval-source-map'
+
+//线上的代码
+devtool:'cheap-module-source-map'
+</code></pre></div><h2 id="webpackdevserve"><a href="#webpackdevserve" class="header-anchor">#</a> webpackDevServe</h2> <div class="language- extra-class"><pre><code>1.&quot;dev&quot;:&quot;webpack -watch&quot;  // 不是http
+2. 在使用ajax请求的时候，需要http请求
+配置:
+	devServer:{
+		contentBase:'./dist' //启动一个服务器
+		open:true //在启动的时候自动打开浏览器
+		proxy:{
+			'/api':'http://localhost:3000'
+		}，
+		hot:true,
+		hotOnly:true  //即便hrm没有生效，也不让浏览器刷新
+	}
+	npm i webpack-dev-server
+	&quot;start&quot;:&quot;webpack-dev-server&quot;
+	
+	const webpack = require('webpack')
+	plugins:[
+		new webpackHotModuleReplacementPlugin()  //配置devserver的hot，之后，webapck的hrm实现
+	]
+	
+	import number from './numver'
+	if(module.hot){
+		module.hot.accept('./number',() =&gt; {  //监控变化
+			number()  // 如果number发生了变化，则执行number，重新渲染
+		})
+	}
+</code></pre></div><p>​</p> <div class="language- extra-class"><pre><code>	// 自己写一个devserver
+	npm i webpack-dev-middleware express
+	const express = require('express')
+	const webpack = require('webpack')
+	cont webpackDevMiddleware = require('webpack-dev-milldleware')
+	const config = require('./webpack.config.js')
+	const complier = webpack(config)
+	const app = express()
+	
+	app.use(webpackDevMiddleware(complier,{
+		publicPath:config.output.publicPath
+	}))
+	app.listen(3000)
+</code></pre></div><p>​		
+​</p> <div class="language- extra-class"><pre><code>	bebel安装
+	npm i babel-loader @babel/core
+	exclude:'/node_modules'  //如果在这里面，则不使用babel。排除在外
+	npm i @bebel/preset-env   //包含了es6转es5的规则
+	module:{
+		rules:[
+			{
+				test:/\.js$/,
+				exclude:'/node_modules',
+				loader:'babel-loader',
+				options:{
+					presets:['@babel/preset-env']
+				}
+			}
+		]
+	}
+	
+	如何在低版本浏览器运行  @babel/polyfill
+	import '@babel/polyfill'   //在需要的地方引入，但是打包之后的文件会过大
+	{
+		test:/\.js$/,
+		exclude:'/node_modules',
+		loader:'babel-loader',
+		options:{
+			presets:[
+				['@babel/preset-env',{useBuiltIns:'usage'},targets:{chrome:'67'}]  // 当我用babel/polyfill的时候，根据业务 代码来跟进加什么         targets 运行在谷歌版本大于67的
+				]
+		}
+	}
+	
+	@babel/plugin-transform-runtime
+	@babel/runtime
+	options:{
+		&quot;plugins&quot;:[
+			[&quot;@babel/plugin-transform-runtime&quot;,{
+				&quot;corejs&quot;:2,    //如果是2 还需要安装   @babel/runtime-corejs2
+				&quot;helpers&quot;:true,
+				&quot;regenerator&quot;:true,
+				&quot;useESModules&quot;:false
+			}]
+		]
+	}
+	
+	.babelrc
+		把options中的内容放在这里面。则上面不写options
+		{useBuiltIns:'usage'}//按需引入
+</code></pre></div><p>​</p> <div class="language- extra-class"><pre><code>	babel配置react    //babrlrc的执行顺序是从下到上，从右到左
+	@babel/preset-react
+</code></pre></div><p>​</p> <div class="language- extra-class"><pre><code>	Tree Shaking  //把用到的打包，没用到的不打包。  只支持esModule模块。  import * from ''
+	plugins:[
+		optimization:{
+			usedExports:true
+		}
+	]
+	在package.json中配置
+	sideEffects:false     
+	sideEffects:[&quot;@babel/polly-fill&quot;]
+	sideEffects:[
+		&quot;*.css&quot;
+	]
+	在mode：'productes'中tree shaking默认被配置好
+</code></pre></div><p>​		
+​</p> <div class="language- extra-class"><pre><code>	创建 
+	webpack.dev.js  //开发环境
+	webpack.prod.js // 生成环境
+	
+	package.json
+	scripts:{
+		&quot;dev&quot;:'webpack-dev-server --config webpack.dev.js'
+		&quot;build&quot;:&quot;webpack --config webpack.prod.js&quot;
+	}
+	
+	webpack.common.js
+	module.exports = {
+		
+	}
+	
+	npm i webpack-merge //将webpack模块合并
+	const merge = require('webpack-merge')
+	const commonConfig = require('./weboack.common.js')
+	const devConfig = {}
+	
+	module.exports = merge(commonConfig,devconfig)
+</code></pre></div><p>​		
+webpack code splitting 代码分割  通过合理的代码分割，可以使得代码更加优化</p> <div class="language- extra-class"><pre><code>npm i loadsh
+import _ from lodash
+entry:{
+	loadh:'./loadsh'
+}
+
+loadsh是有缓存的，当页面逻辑发生变化，只需要重新加载main.js
+optimization{
+	splitChunks:{
+		chunks:'all'
+	}
+}
+
+babel-plugin-dynamic-import-webpack
+代码分割和webpack无关，webpack实现代码分割
+1.同步代码：只需要在webpack.common.js中做optimization配置
+2.异步代码：无需做任何配置，自动进行代码分割
+例: function get(){
+	return import('loadsh').then(({default:_}) =&gt; {
+		let ele = document.createElement('div')
+		ele.innerHTML = _.join(['dell','lee'],'-')
+		return ele
+	})
+}
+get().then(ele =&gt; {
+	document.body.appendChild(ele)
+})
+</code></pre></div><h2 id="vue中配置webpack"><a href="#vue中配置webpack" class="header-anchor">#</a> vue中配置webpack</h2></div> <footer class="page-edit"><!----> <!----></footer> <!----> </main></div><div class="global-ui"><!----></div></div>
+    <script src="/vueprss-blog/assets/js/app.8935fa97.js" defer></script><script src="/vueprss-blog/assets/js/2.65e50b3e.js" defer></script><script src="/vueprss-blog/assets/js/10.125fb6e1.js" defer></script>
+  </body>
+</html>

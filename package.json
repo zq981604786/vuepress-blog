@@ -1,0 +1,26 @@
+{
+  "name": "demo01",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "docs": "vuepress build docs && cp -rf ./docs/.vuepress/dist/* ./docs && rm -r ./docs/.vuepress/dist",
+    "docs:build": "vuepress build docs",
+    "start": "export NODE_ENV=dev && vuepress dev docs"
+  },
+  "dependencies": {
+    "@vuepress/plugin-back-to-top": "^1.3.1",
+    "@vuepress/plugin-nprogress": "^1.3.1",
+    "element-ui": "^2.3.7",
+    "highlight.js": "^9.12.0",
+    "less-loader": "^4.1.0",
+    "valine": "^1.3.10",
+    "vue": "^2.5.16",
+    "vue-highlight.js": "^2.2.0"
+  },
+  "devDependencies": {
+    "less": "^3.0.2",
+    "vue-echarts": "^3.0.7"
+  }
+}
