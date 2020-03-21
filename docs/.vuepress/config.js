@@ -12,7 +12,7 @@ module.exports = {
                 items:[
                     {text:'Vue',link:'/frontend/vue/vue'},
                     {text:'React',link:'/frontend/react/react'},
-                    {text:'Webpack',link:'/frontend/webpack/webpack'}
+                    {text:'Webpack',link:'/frontend/webpack/webpack01'}
                 ]
             },
             {text:'后台',
@@ -28,7 +28,7 @@ module.exports = {
                 ]
             },
             {text:'关于作者',link:'/myself/about'},
-            {text:'GitHub',link:'https://github.com/zq981604786/vueprss-blog'},
+            {text:'GitHub',link:'https://github.com/zq981604786/vueprss-blog'}
         ],
         sidebar: 'auto',
         sidebarDepth: 2,
@@ -40,7 +40,9 @@ module.exports = {
                 'react'
             ],
             '/frontend/webpack/':[
-                'webpack'
+                'webpack01',
+                'webpack02',
+                'webpack03'
             ],
             '/backend/node/':[
                 'node'
@@ -60,8 +62,8 @@ module.exports = {
     },
     plugins:[
         ['@vuepress/back-to-top'],
-        ['@vuepress/blog'],
-        ['@vuepress/nprogress']
+        ['@vuepress/nprogress'],
+        ['@vuepress/medium-zoom']
     ],
     markdown: {
         lineNumbers: true,  // 代码显示行号
